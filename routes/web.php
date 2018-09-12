@@ -29,6 +29,10 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
     //admin
     Route::get('/', function(){
         //knkari admini ej@
+        if(view()->exists('admin.index')){
+            $data = ['title' => 'Admin Panel'];
+            return view('admin.index', $data);
+        }
     });
 
     //admin/pages
@@ -64,3 +68,6 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
         Route::match(['get', 'post', 'delete'], '/edit/{service}', ['uses' => 'ServiceEditController@execute', 'as' => 'serviceEdit']);
     });
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
