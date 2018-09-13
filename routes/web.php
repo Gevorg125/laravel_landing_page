@@ -17,7 +17,7 @@
 //});
 
 Route::group(['middleware'=>'web'], function() {
-    Route::match(['get', 'post'], '/', ['uses' => 'IndexController@execute', 'as'=>'home']);
+    Route::match(['get', 'post'], '/', ['uses' => 'IndexController@execute']);
     Route::get('/page/{alias}', ['uses' => 'PageController@execute', 'as' => 'page']);
 
     Route::auth();
@@ -71,7 +71,10 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
         Route::match(['get', 'post'], '/add', ['uses' => 'ServiceAddController@execute', 'as'=>'serviceAdd']);
 
         //admin/service/edit/{service}
-        Route::match(['get', 'post', 'edit','delete'], '/edit/{service}', ['uses' => 'ServiceEditController@execute', 'as' => 'serviceEdit']);
+        Route::match(['get', 'post', 'delete'], '/edit/{service}', ['uses' => 'ServiceEditController@execute', 'as' => 'serviceEdit']);
+
+        //admin/service/edit/{service}
+        Route::match(['get', 'post', 'edit'], '/edit/{service}', ['uses' => 'ServiceEditController@execute', 'as' => 'serviceEdit']);
     });
 });
 Auth::routes();
