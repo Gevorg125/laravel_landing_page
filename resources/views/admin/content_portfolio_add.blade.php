@@ -1,5 +1,5 @@
 <div class="wrapper container-fluid">
-    <form action="{{ route('pagesAdd') }}" method="post" class="form-horizontal" enctype="multipart/form-data">
+    <form action="{{ route('portfolioAdd') }}" method="post" class="form-horizontal" enctype="multipart/form-data">
         <div class="form-group">
             <label class="col-xs-2 control-label" for="name">Name</label>
             <div class="col-xs-8">
@@ -7,15 +7,9 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-xs-2 control-label" for="alias">Alias</label>
+            <label class="col-xs-2 control-label" for="Filter">Filter</label>
             <div class="col-xs-8">
-                <input class="form-control" placeholder="Alias" type="text" name="alias" value="{{old('alias')}}">{{--old->session-i mej exac name-n e--}}
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-xs-2 control-label" for="text">Text</label>
-            <div class="col-xs-8">
-                <textarea id="editor" class="form-control" placeholder="Text" name="text">{{old('text')}}</textarea>{{--old->session-i mej exac name-n e--}}
+                <input class="form-control" placeholder="Filter" type="text" name="filter" value="{{old('filter')}}">{{--old->session-i mej exac name-n e--}}
             </div>
         </div>
         <div class="form-group">
@@ -30,7 +24,7 @@
             </div>
         </div>
 
-        //token for the form
+
         {{--<input class="input-btn" type="hidden" name="_token" value="{{ csrf_token() }}">--}}
         {{ csrf_field() }}
 

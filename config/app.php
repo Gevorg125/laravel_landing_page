@@ -175,9 +175,6 @@ return [
         //HTML and Forms
         App\Providers\AnnotationsServiceProvider::class,
 
-        Illuminate\Html\FormFacade::class,
-
-        Illuminate\Html\HtmlFacade::class,
 
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
@@ -235,7 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
 
-        'Form' => \Illuminate\Html\FormFacade::class,
+
         ],
 
 ];

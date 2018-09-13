@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Page;
+use App\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 
-class PagesAddController extends Controller
+class PortfolioAddController extends Controller
 {
     //
     public function execute(Request $request){
@@ -19,17 +19,19 @@ class PagesAddController extends Controller
 
             //sxalneri targmanutyun
             $massages = [
-              'required' => 'ays :attribute partadir e',
+                'required' => 'ays :attribute partadir e',
                 'unique' => 'ays :attribute krknvec'
             ];
+
+
             $validator = Validator::make($input,[
                 'name' => 'required|max:255',
-                'alias' => 'required|unique:pages|max:255',
-                'text' => 'required'
+                'filter' => 'required|unique:portfolios|max:255',
+
             ], $massages);
 
             if($validator->fails()){
-                return redirect()->route('pagesAdd')->withErrors($validator)->withInput();//withInput formi mej kpahi arden lracvac dashter@
+                return redirect()->route('portfolioAdd')->withErrors($validator)->withInput();//withInput formi mej kpahi arden lracvac dashter@
             }
 
             //upload file
@@ -42,17 +44,17 @@ class PagesAddController extends Controller
 
             //Saving into database
 
-            $page = new Page();
-            $page->fill($input);
+            $portfolio = new Portfolio();
+            $portfolio->fill($input);
 
-            if($page->save()){
-                return redirect('admin')->with('status', 'The Page was added');
+            if($portfolio->save()){
+                return redirect('admin')->with('status', 'The Portfolio was added');
             }
 
         }
-        if(view()->exists('admin.pages_add')){
-            $data=['title' => 'New Page'];
-            return view('admin.pages_add', $data);
+        if(view()->exists('admin.portfolios_add')){
+            $data=['title' => 'New Portfolio'];
+            return view('admin.portfolios_add', $data);
         }
         abort(404);
     }
