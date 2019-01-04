@@ -18,7 +18,7 @@
                     <td>{{ $portfolio->id }}</td>
                     <td>{{ $portfolio->name }}</td>
                     <td>{{  $portfolio->filter }}</td>
-                    <td><img src="{{asset('assets/img/' .$portfolio->images)}}"  width='50px'></td>
+                    <td><img src="{{asset('public/assets/img/' .$portfolio->images)}}"  width='50px'></td>
                     <td>{{ $portfolio->created_at }}</td>
                     <td>
                         <form class='form-horizontal' action="{{ route('portfolioEdit',['portfolio'=>$portfolio->id]) }}" method="post">

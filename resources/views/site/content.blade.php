@@ -13,7 +13,7 @@
                                         <a href="{{ route('page', ['alias' => $page->alias]) }}" class="read_more2">Read more</a> </div>
                                 </div>
                                 <div class="col-lg-7 col-sm-5">
-                                    <img src="{{ asset('assets/img/' . $page->images) }}" class="zoomIn wow animated" alt="" />
+                                    <img src="{{ asset('public/assets/img/' . $page->images) }}" class="zoomIn wow animated" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                         <h2>{{ $page->name }}</h2>
                         <div class="inner_section">
                             <div class="row">
-                                <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right"><img src="{{ asset('assets/img/' . $page->images) }}" class="img-circle delay-03s animated wow zoomIn" alt=""></div>
+                                <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right"><img src="{{ asset('public/assets/img/' . $page->images) }}" class="img-circle delay-03s animated wow zoomIn" alt=""></div>
                                 <div class=" col-lg-7 col-md-7 col-sm-7 col-xs-12 pull-left">
                                     <div class=" delay-01s animated fadeInDown wow animated">
                                         {!! $page->text !!}
@@ -112,7 +112,7 @@
 
                 @foreach($portfolios as $portfolio)
                     <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  {{ $portfolio->filter }} isotope-item">
-                        <div class="portfolio_img"> <img src="{{ asset('assets/img/' . $portfolio->images) }}"  alt="Portfolio 1"> </div>
+                        <div class="portfolio_img"> <img src="{{ asset('public/assets/img/' . $portfolio->images) }}"  alt="Portfolio 1"> </div>
                         <div class="item_overlay">
                             <div class="item_info">
                                 <h4 class="project_name">{{ $portfolio->name }}</h4>
@@ -152,7 +152,7 @@
                 <div class="team_area">
                     <div class="team_box wow fadeInDown delay-0{{ ($k*3 +1) }}s">
                         <div class="team_box_shadow"><a href="javascript:void(0)"></a></div>
-                        <img src="{{ asset('assets/img/' . $people->images) }}" alt="">
+                        <img src="{{ asset('public/assets/img/' . $people->images) }}" alt="">
                         <ul>
                             <li><a href="{{ $people->url }}" class="fa fa-twitter"></a></li>
                             <li><a href="{{ $people->url }}" class="fa fa-facebook"></a></li>

@@ -16,7 +16,7 @@
         <div class="form-group">
             <label class="col-xs-2 control-label" for="images">Old_image</label>
             <div class="col-xs-8">
-                <img src="{{asset('assets/img/' .$data['images'])}}" class='img-circle img-responsive' width='150px'>
+                <img src="{{asset('public/assets/img/' .$data['images'])}}" class='img-circle img-responsive' width='150px'>
                 <input type="hidden" name="old_images" value="{{$data['images']}}">{{--old->session-i mej exac name-n e--}}
             </div>
         </div>
